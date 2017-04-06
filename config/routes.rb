@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
 
   scope '/admin' do
     resources :users
@@ -15,4 +16,6 @@ Rails.application.routes.draw do
   end
 
   resources :cinemas, only: [:show, :index]
+
+
 end

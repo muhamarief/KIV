@@ -59,3 +59,5 @@ gem 'devise'
 #user authentication
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+gem 'figaro'
