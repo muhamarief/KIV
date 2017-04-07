@@ -11,8 +11,7 @@ class User < ApplicationRecord
   validates :email, presence: { message: "You need to type in an email!"}
 
   def assign_role
-    role = Role.find_by name: "Customer" if self.role.nil?
-    self.role_id = role.id
+    self.role = Role.find_by(name: "Customer") unless self.role
   end
 
 

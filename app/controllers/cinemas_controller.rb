@@ -14,8 +14,9 @@ class CinemasController < ApplicationController
 
   def create
     @cinema = Cinema.new(cinema_params)
+    @cinemas = Cinema.all
     if @cinema.save
-      redirect_to @cinemas
+      redirect_to cinema_path(@cinemas)
     else
       render 'new'
     end
@@ -27,18 +28,19 @@ class CinemasController < ApplicationController
 
   def update
      @cinema = Cinema.find(params[:id])
+     @cinemas = Cinema.all
      if @cinema.update(cinema_params)
         redirect_to cinema_path(@cinema)
-      else
+     else
         render 'edit'
-      end
+     end
   end
 
  def destroy
     @cinema = Cinema.find(params[:id])
     @cinema.destroy
 
-    redirect_to cinemas_path
+    redirect_to root_path
   end
 
 

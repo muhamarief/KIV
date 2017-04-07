@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   scope '/admin' do
     resources :cinemas, except: [:show, :index]
   end
-
   resources :cinemas, only: [:show, :index]
 
   devise_scope :user do
@@ -22,4 +21,8 @@ Rails.application.routes.draw do
 end
 
 
+  scope '/admin' do
+    resources :movies, except: [:show, :index]
+  end
+  resources :movies, only: [:show, :index]
 end
