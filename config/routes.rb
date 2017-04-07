@@ -10,13 +10,16 @@ Rails.application.routes.draw do
 
   root "welcome#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  scope '/admin' do
-    resources :cinemas, except: [:show, :index]
-  end
+  # scope '/admin' do
+  #   resources :cinemas, except: [:show, :index]
+  # end
   resources :cinemas, only: [:show, :index]
+  resources :movies, only: [:show, :index]
 
-  scope '/admin' do
+  scope '/admin', as: 'admin' do
+    resources :cinemas, except: [:show, :index]
     resources :movies, except: [:show, :index]
   end
-  resources :movies, only: [:show, :index]
+
+
 end
