@@ -60,5 +60,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+
+gem 'figaro'
 #carrierwave
 gem 'carrierwave', '~> 1.0'
+
