@@ -29,8 +29,8 @@
             <td><%= cinema.address %></td>
 
             <td><%= link_to 'Show', "/cinemas/#{cinema.id}", class: 'btn btn-mini' %></td>
-            <td><%= link_to 'Edit', edit_cinema_path(cinema), class: 'btn btn-mini btn-success' %></td>
-            <td><%= link_to 'Destroy', edit_cinema_path(cinema), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_admin_cinema_path(cinema), class: 'btn btn-mini btn-success' %></td>
+            <td><%= link_to 'Destroy', admin_cinema_path(cinema), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
 
           </tr>
         <% end %>
@@ -42,5 +42,5 @@
 
 
 
-<%= link_to 'New listing', new_cinema_path %>
+<%= link_to 'New listing', new_admin_cinema_path %>
 <%= link_to 'Back', root_path %>
