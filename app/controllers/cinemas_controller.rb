@@ -1,7 +1,13 @@
 class CinemasController < ApplicationController
 
   def index
-    @cinemas = Cinema.all
+    # @cinemas = Cinema.all
+    @q = Cinema.ransack(params[:q])
+    if params[:q].nil?
+      @cinemas = Cinema.all
+    else
+      @cinemas = @q.result(distinct: true)
+    end
   end
 
   def show
@@ -45,7 +51,7 @@ class CinemasController < ApplicationController
 
  private
     def cinema_params
-      params.require(:cinema).permit(:cinema_name, :contact, :address, :state, :company, :cinema_id, :longitude, :latitude)
+      params.require(:cinema).permit(:cinema_name, :contact, :address, :state, :company, :cinema_id, :longitude, :latitude, :q)
     end
 
 

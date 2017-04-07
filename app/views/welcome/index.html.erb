@@ -1,1 +1,10 @@
 <p> welcome page </p>
+
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :cinema_name_cont %>
+  <%= f.search_field :cinema_name_cont %>
+
+
+  <%= f.submit %>
+<% end %>

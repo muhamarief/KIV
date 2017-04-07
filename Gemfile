@@ -65,3 +65,5 @@ gem 'figaro'
 #carrierwave
 gem 'carrierwave', '~> 1.0'
 
+#for search engine
+gem 'ransack', github: 'activerecord-hackery/ransack'
