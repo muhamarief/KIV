@@ -6,7 +6,7 @@ class CinemasController < ApplicationController
     if params[:q].nil?
       @cinemas = Cinema.all
     else
-      @cinemas = @q.result(distinct: true)
+      @cinemas = @q.result
     end
   end
 
