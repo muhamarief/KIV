@@ -1,21 +1,21 @@
 <div class="row">
   <div class-"col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
     <h1 class="text-center">
-      Edit Your Cinema
+      Edit Your Movie
     </h1>
   </div>
 </div>
 <div class="row">
   <div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-    <%= form_for @cinema do |form| %>
+    <%= form_for @movie do |form| %>
       <%= render partial: 'form', object: form %>
     <% end %>
   </div>
 </div>
 <div class="row">
   <div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 text-center">
-    <%= link_to "Delete Cinema", cinema_path(@cinema), method: :delete, data: {confirmation: "Are you sure?"}, class: "btn btn-danger" %>
+    <%= link_to "Delete Movie", movie_path(@movie), method: :delete, data: {confirmation: "Are you sure?"}, class: "btn btn-danger" %>
   </div>
 </div>
 
-<%= link_to 'Back', cinemas_path %>
+<%= link_to 'Back', root_path %>

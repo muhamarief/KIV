@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170406082144) do
+ActiveRecord::Schema.define(version: 20170406092825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20170406082144) do
     t.string   "trailer_url"
     t.string   "cast"
     t.integer  "rating"
-    t.time     "duration"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "duration"
   end
 
   create_table "roles", force: :cascade do |t|

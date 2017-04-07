@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   scope '/admin' do
     resources :cinemas, except: [:show, :index]
   end
-
   resources :cinemas, only: [:show, :index]
+
+  scope '/admin' do
+    resources :movies, except: [:show, :index]
+  end
+  resources :movies, only: [:show, :index]
 end
