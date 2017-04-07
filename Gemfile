@@ -65,3 +65,5 @@ gem 'figaro'
 #carrierwave
 gem 'carrierwave', '~> 1.0'
 
+#resizing and images
+gem "mini_magick"
