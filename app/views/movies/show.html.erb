@@ -14,6 +14,13 @@
   </li>
 </ul>
 
+<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+<div class='col-md-8 col-sm-12 col-xs-12 col-md-offset-2'>
+  <center>
+      <iframe id="player" type="text/html" width="640" height="390"  allowfullscreen="allowfullscreen" src="http://www.youtube.com/embed/<%=@movie.trailer_url%>" frameborder="0"></iframe>
+  </center>
+</div>
+
 
 <%= link_to 'Edit', edit_admin_movie_path(@movie) %>
 <%= link_to 'Back', root_path %>
