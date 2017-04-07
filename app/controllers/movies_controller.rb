@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
     @movies = Movie.all
     if @movie.save
-      redirect_to movie_path(@movies)
+      redirect_to movies_path
     else
       render 'new'
     end
@@ -30,7 +30,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movies = Movie.all
     if @movie.update(movie_params)
-      redirect_to movie_path(@movies)
+      redirect_to movies_path
     else
       render 'edit'
     end
