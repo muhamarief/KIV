@@ -45,7 +45,7 @@ class CinemasController < ApplicationController
 
  private
     def cinema_params
-      params.require(:cinema).permit(:cinema_name, :contact, :address, :state, :company, :cinema_id, :longitude, :latitude)
+      params.require(:cinema).permit(:cinema_name, :contact, :address, :state, :company, :cinema_id, :longitude, :latitude, {photos:[]})
     end
 
 

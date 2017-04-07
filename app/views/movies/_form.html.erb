@@ -24,15 +24,17 @@
 </p>
 
 <p>
-   <%= form.label :rating %><br>
-   <%= form.text_area :rating %>
- </p>
+  <%= form.label :rating %><br>
+  <%= form.text_area :rating %>
+</p>
 
- <p>
-    <%= form.label :duration %><br>
-    <%= form.text_area :duration %>
-  </p>
+<p>
+  <%= form.label :duration %><br>
+  <%= form.text_area :duration %>
+</p>
 
- <p>
+<%= form.file_field :photos, multiple: true %>
+
+<p>
   <%= form.submit %>
 </p>

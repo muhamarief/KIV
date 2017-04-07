@@ -1,7 +1,7 @@
 <h1>New Cinema</h1>
 
 
-<%= form_for @cinema do |form| %>
+<%= form_for [:admin, @cinema] do |form| %>
   <%= render partial: 'form', object: form %>
 <% end %>
 
