@@ -9,10 +9,10 @@ class User < ApplicationRecord
   validates_presence_of :username
   validates :email, uniqueness:{ message: "Your email has already been taken!"}
   validates :email, presence: { message: "You need to type in an email!"}
-  before_save :assign_role
 
   def assign_role
-    self.role = Role.find_by name: "Regular" if self.role.nil?
+    role = Role.find_by name: "Customer" if self.role.nil?
+    self.role_id = role.id
   end
 
 
@@ -20,8 +20,11 @@ class User < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
-      user.name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
+      user.username = auth.info.name 
+      user.role_id = Role.find_by_name("Customer").id
+      byebug
+        # assuming the user model has a name
+      # user.image = auth.info.image # assuming the user model has an image
       # If you are using confirmable and the provider(s) you use validate emails, 
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
