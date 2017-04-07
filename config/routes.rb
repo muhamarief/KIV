@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
 
   scope '/admin' do
     resources :users
@@ -15,6 +16,10 @@ Rails.application.routes.draw do
   # end
   resources :cinemas, only: [:show, :index]
   resources :movies, only: [:show, :index]
+
+  devise_scope :user do
+    delete 'sign_out', :to => 'devise/sessions#destroy'
+  end
 
   scope '/admin', as: 'admin' do
     resources :cinemas, except: [:show, :index]

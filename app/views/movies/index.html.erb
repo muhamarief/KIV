@@ -34,7 +34,8 @@
 
             <td><%= link_to 'Show', "/movies/#{movie.id}", class: 'btn btn-mini' %></td>
             <td><%= link_to 'Edit', edit_admin_movie_path(movie), class: 'btn btn-mini btn-success' %></td>
-            <td><%= link_to 'Destroy', edit_admin_movie_path(movie), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Destroy', admin_movie_path(movie), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+
 
           </tr>
         <% end %>

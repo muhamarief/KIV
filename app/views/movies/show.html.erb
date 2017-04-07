@@ -14,7 +14,8 @@
   </li>
 </ul>
 
-<!-- links -->
-<%= link_to 'Back', user_path(current_user) %>
+
 <%= link_to 'Edit', edit_admin_movie_path(@movie) %>
-<%= link_to 'Back', root_path %>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %>
+ <%= link_to 'Back', root_path %>

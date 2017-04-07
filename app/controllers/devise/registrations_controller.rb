@@ -14,7 +14,6 @@ class Devise::RegistrationsController < DeviseController
   def create
     build_resource(sign_up_params)
     resource.assign_role
-
     resource.save
     yield resource if block_given?
     if resource.persisted?
