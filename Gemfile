@@ -59,3 +59,6 @@ gem 'devise'
 #user authentication
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+#carrierwave
+gem 'carrierwave', '~> 1.0'
