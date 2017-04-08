@@ -1,7 +1,6 @@
 class CinemasController < ApplicationController
 
   def index
-    # @cinemas = Cinema.all
     @q = Cinema.ransack(params[:q])
     if params[:q].nil?
       @cinemas = Cinema.all
