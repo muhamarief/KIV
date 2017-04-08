@@ -13,9 +13,14 @@ class MoviesController < ApplicationController
       render 'new'
     end
   end
-
+  
   def index
-    @movies = Movie.all
+    @q = Movie.ransack(params[:q])
+    if params[:q].nil?
+      @movies = Movie.all
+    else
+      @movies = @q.result
+    end
   end
 
   def show
