@@ -1,0 +1,19 @@
+<% @screenings.each do |screening| %>
+  <%= screening.start_date %>
+  <%= screening.start_time %>
+<% end unless @screenings.nil? %>
+
+<%= form_for [:admin, @current_showplace, @screening] do |form| %>
+  <%= form.label :start_date %><br>
+  <%= form.date_field :start_date, require: true %>
+
+  <%= form.label :start_time %><br>
+  <%= form.time_field :start_time, require: true %>
+
+  <%=form.label :price %><br>
+  <%=form.text_field :price%>
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
