@@ -69,3 +69,4 @@ gem 'carrierwave', '~> 1.0'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 #resizing and images
 gem "mini_magick"
+gem "braintree"
