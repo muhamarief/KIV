@@ -26,5 +26,7 @@ Rails.application.routes.draw do
     resources :movies, except: [:show, :index]
   end
 
+  resources :cinema_movies
+
 
 end
