@@ -29,51 +29,20 @@
     </div>
   </div>
 
-  <div class="row">
-    <a href="#">
+
+<div class="container">
+  <% @movies.each_with_index do |movie, index| %>
+    <a href="/movies/<%= movie.id %>">
       <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Movie 1</p>
+        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        <p><%=movie.title%></p>
       </div>
     </a>
-    <a href="#">
-      <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Movie 2</p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Movie 3</p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Movie 4</p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Movie 5</p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Movie 6</p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Movie 7</p>
-      </div>
-    </a>
-  </div>
+  <%end%>
+  <%= link_to 'New Movie', new_admin_movie_path %>
+  <%= link_to 'Back', root_path %>
 </div>
 
 <%= link_to 'New Movie', new_admin_movie_path %>
 <%= link_to 'Back', root_path %>
+
