@@ -28,6 +28,7 @@ class CinemasController < ApplicationController
 
   def edit
     @cinema = Cinema.find(params[:id])
+    @showplace = Showplace.new
   end
 
   def update

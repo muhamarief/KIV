@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'braintree/new'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 
@@ -25,11 +27,13 @@ Rails.application.routes.draw do
   scope '/admin', as: 'admin' do
     resources :cinemas, except: [:show, :index]
     resources :movies, except: [:show, :index]
+    resources :showplaces
   end
 
-  resources :cinema_movies
   resources :search, only: :get
 
   get "search" => "search#index"
-
+  
+  get "/coming_soon" => "movies#coming_soon", as: "coming_soon"
+  get "/showing_now" => "movies#showing_now", as: "showing_now"
 end
