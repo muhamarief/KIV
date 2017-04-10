@@ -7,7 +7,7 @@
         All Movies
       </h1>
     <% elsif params[:action] == "showing_now" %>
-      <h1 class="text-center">
+      <h1 class="text-left">
         Showing Now
       </h1>
     <% else %>
@@ -18,16 +18,20 @@
   </div>
 </div>
   
-<div class="container text-center">
+<div class="container text-left">
 
+<hr style="margin:10px 10px 10px 10px">
   <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Sort By</button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="#">Movie Name</a>
-      <a href="#">Popular</a>
-      <a href="#">Latest Release</a>
-    </div>
-  </div>
+    <button class="btn btn-primary dropdown-toggle dropbtn" type="button" data-toggle="dropdown">Sort By
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Movie Name</a></li>
+      <li><a href="#">Popular</a></li>
+      <li><a href="#">Latest Release</a></li>
+    </ul>
+  </div> 
+
+<hr style="visibility:hidden">
 
   <div class="row">
     <a href="#">
