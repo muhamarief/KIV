@@ -4,6 +4,7 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
 
@@ -33,6 +34,14 @@
           <p>Lorem ipsum...</p>
         </div>
       </div>
+
+      <div class="item">
+        <%= image_tag "Get-Out-movie-song.jpg" %>
+        <div class="carousel-caption">
+          <h3>More Sell $</h3>
+          <p>Lorem ipsum...</p>
+        </div>
+      </div>
     </div>
 
     <!-- Left and right controls -->
@@ -56,19 +65,23 @@
 
 
 <div class="container text-center">
-  <h3>Showing Now</h3><br>
+  <h3>Now Showing</h3><br>
   <div class="row">
-    <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAG" class="img-responsive" style="width:100%" alt="Image">
-      <p>Current Project</p>
+    <div class="col-sm-3">
+      <%= image_tag 'fast82.jpg', alt: "Image", :class => "style_image"%>
+      <p>Fast 8</p>
     </div>
-    <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 2</p>
+    <div class="col-sm-3">
+      <%= image_tag 'ghostinashell.jpg', alt: "Image", :class => "style_image"%>
+      <p>Ghost In a Shell</p>
     </div>
-    <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 3</p>
+    <div class="col-sm-3">
+      <%= image_tag 'life.jpg', alt: "Image", :class => "style_image"%>
+      <p>Life </p>
+    </div>
+    <div class="col-sm-3">
+      <%= image_tag 'beautyandthebeast.jpg', alt: "Image", :class => "style_image"%>
+      <p>Beauty and The Beast</p>
     </div>
   </div>
 </div><br>
@@ -79,17 +92,23 @@
 <div class="container text-center">
   <h3>Coming Soon</h3><br>
   <div class="row">
-    <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Current Project</p>
+    <div class="col-sm-3">
+      <a href="page-link">
+        <%= image_tag 'guardiansmovieposter', alt: "Image", :class => "style_image"%>
+      </a>
+      <p>Guardians of the Galaxy Vol 2</p>
     </div>
-    <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 2</p>
+    <div class="col-sm-3">
+    <%= image_tag 'get_out.jpg', alt: "Image", :class => "style_image"%>
+      <p>Get Out</p>
     </div>
-    <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 3</p>
+    <div class="col-sm-3">
+      <%= image_tag 'keep_watching.jpg', alt: "Image", :class => "style_image"%>
+      <p>Keep Watching</p>
+    </div>
+    <div class="col-sm-3">
+      <%= image_tag 'Gifted-movie-poster.jpg', alt: "Image", :class => "style_image"%>
+      <p>Gifted</p>
     </div>
   </div>
 </div><br>
