@@ -27,13 +27,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Logo</a>
+          <a class="navbar-brand" href="/"> KIV </a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Now Showing</a></li>
-            <li><a href="#">Coming Soon</a></li>
+            <li><a href="/">Home</a></li>
+            <li><%= link_to "Now Showing", showing_now_path %>
+            <li><%= link_to "Coming Soon", coming_soon_path %>
+
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
