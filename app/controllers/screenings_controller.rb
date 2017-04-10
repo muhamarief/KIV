@@ -7,7 +7,6 @@ class ScreeningsController < ApplicationController
   def create
     @screening = Screening.new(screening_params)
     @screening.showplace_id = Showplace.find(params[:showplace_id]).id
-    byebug
     if @screening.save
       redirect_to root_path
     else
@@ -17,7 +16,7 @@ class ScreeningsController < ApplicationController
 
   def index
     @screening = Screening.new
-    @screenings = Screening.find_by(:showplace_id => params[:showplace_id])
+    @screenings_hash = Screening.where(:showplace_id => params[:showplace_id]).group_by(&:start_date)
     @current_showplace = Showplace.find(params[:showplace_id])
   end
 
