@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # scope '/admin' do
   #   resources :cinemas, except: [:show, :index]
   # end
+
   resources :cinemas, only: [:show, :index]
   resources :movies, only: [:show, :index]
 
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
   end
 
   resources :cinema_movies
+  resources :search, only: :get
 
+  get "search" => "search#index"
 
 end
