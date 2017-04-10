@@ -8,14 +8,19 @@ class MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
     @movies = Movie.all
     if @movie.save
-      redirect_to movie_path(@movies)
+      redirect_to movies_path
     else
       render 'new'
     end
   end
-
+  
   def index
-    @movies = Movie.all
+    @q = Movie.ransack(params[:q])
+    if params[:q].nil?
+      @movies = Movie.all
+    else
+      @movies = @q.result
+    end
   end
 
   def show
@@ -30,7 +35,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movies = Movie.all
     if @movie.update(movie_params)
-      redirect_to movie_path(@movies)
+      redirect_to movies_path
     else
       render 'edit'
     end
@@ -45,7 +50,7 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:title, :description, :genre, :trailer_url, :cast, :rating, :duration)
+    params.require(:movie).permit(:title, :description, :genre, :trailer_url, :cast, :rating, :duration, {photos: []})
   end
 
 end

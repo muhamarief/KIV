@@ -32,9 +32,10 @@
             <td><%= movie.rating %></td>
             <td><%= movie.duration %> min</td>
 
-            <td><%= link_to 'Show', "/movies/#{movie.id}", class: 'btn btn-mini' %></td>
-            <td><%= link_to 'Edit', edit_movie_path(movie), class: 'btn btn-mini btn-success' %></td>
-            <td><%= link_to 'Destroy', movie_path(movie), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', movie_path(movie), class: 'btn btn-mini' %></td>
+            <td><%= link_to 'Edit', edit_admin_movie_path(movie), class: 'btn btn-mini btn-success' %></td>
+            <td><%= link_to 'Destroy', admin_movie_path(movie), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+
 
           </tr>
         <% end %>
@@ -46,5 +47,5 @@
 
 
 
-<%= link_to 'New Movie', new_movie_path %>
+<%= link_to 'New Movie', new_admin_movie_path %>
 <%= link_to 'Back', root_path %>
