@@ -2,6 +2,7 @@
   <p><%=showplace.movie.title%></p>
   <p><%=showplace.cinema.cinema_name%></p>
 
+  <td><%= link_to 'Show Screenings', admin_showplace_screenings_path(showplace), class: 'btn btn-mini btn-success' %></td>
   <td><%= link_to 'Edit', edit_admin_showplace_path(showplace), class: 'btn btn-mini btn-success' %></td>
   <td><%= link_to 'Destroy', admin_showplace_path(showplace), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
 
