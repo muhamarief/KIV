@@ -1,8 +1,21 @@
+
+
+
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <h1 class="text-center">
-      All Movies
-    </h1>
+    <% if params[:action] == "index" %>
+      <h1 class="text-center">
+        All Movies
+      </h1>
+    <% elsif params[:action] == "showing_now" %>
+      <h1 class="text-center">
+        Showing Now
+      </h1>
+    <% else %>
+      <h1 class="text-center">
+        Coming Soon
+      </h1>
+    <% end %>
 
 
 <div class="media">

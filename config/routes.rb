@@ -27,9 +27,9 @@ Rails.application.routes.draw do
     resources :movies, except: [:show, :index]
   end
 
-  resources :cinema_movies
   resources :search, only: :get
 
   get "search" => "search#index"
-
+  get "/coming_soon" => "movies#coming_soon", as: "coming_soon"
+  get "/showing_now" => "movies#showing_now", as: "showing_now"
 end
