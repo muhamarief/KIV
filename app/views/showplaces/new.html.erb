@@ -1,0 +1,21 @@
+<h1>Add Showplace</h1>
+
+
+<%= form_for [:admin, @showplace] do |form| %>
+  <%= form.label :cinema_name %><br>
+  <%= form.collection_select :cinema_id, Cinema.order(:cinema_name),:id,:cinema_name, include_blank: true %>
+
+
+  <%= form.label :movie_name %><br>
+  <%= form.collection_select :movie_id, Movie.order(:title),:id,:title, include_blank: true %>
+
+  <%= form.label :hall_no %><br>
+  <%= form.text_field :hall_no%>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>

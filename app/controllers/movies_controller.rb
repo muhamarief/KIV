@@ -15,12 +15,17 @@ class MoviesController < ApplicationController
   end
   
   def index
-    @q = Movie.ransack(params[:q])
-    if params[:q].nil?
-      @movies = Movie.all
-    else
-      @movies = @q.result
-    end
+    @movies = Movie.all
+  end
+
+  def coming_soon
+    @movies = Movie.where("release_date < ?", Date.today)
+    render "index"
+  end
+
+  def showing_now
+    @movies = Movie.where("release_date >= ?", Date.today)
+    render "index"
   end
 
   def show
@@ -50,7 +55,7 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:title, :description, :genre, :trailer_url, :cast, :rating, :duration, {photos: []})
+    params.require(:movie).permit(:title, :description, :genre, :trailer_url, :cast, :rating, :duration, :release_date, {photos: []})
   end
 
 end

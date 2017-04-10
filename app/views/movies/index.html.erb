@@ -1,51 +1,79 @@
+
+
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <h1 class="text-center">
-      All Movies
-    </h1>
-
-
-<div class="media">
-  <div class="media-body">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Movie Title</th>
-          <th>Synopsis</th>
-          <th>Genre</th>
-          <th>Trailer</th>
-          <th>Cast</th>
-          <th>Rating</th>
-          <th>Duration</th>
-        </tr>
-      </thead>
-
-     <tbody>
-        <% @movies.each do |movie| %>
-          <tr>
-            <!-- image_tag avatar.image.url              -->
-            <td><%= movie.title %></td>
-            <td><%= movie.description %></td>
-            <td><%= movie.genre %></td>
-            <td><%= movie.trailer_url %></td>
-            <td><%= movie.cast %></td>
-            <td><%= movie.rating %></td>
-            <td><%= movie.duration %> min</td>
-
-            <td><%= link_to 'Show', movie_path(movie), class: 'btn btn-mini' %></td>
-            <td><%= link_to 'Edit', edit_admin_movie_path(movie), class: 'btn btn-mini btn-success' %></td>
-            <td><%= link_to 'Destroy', admin_movie_path(movie), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
-
-
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <% if params[:action] == "index" %>
+      <h1 class="text-center">
+        All Movies
+      </h1>
+    <% elsif params[:action] == "showing_now" %>
+      <h1 class="text-center">
+        Showing Now
+      </h1>
+    <% else %>
+      <h1 class="text-center">
+        Coming Soon
+      </h1>
+    <% end %>
   </div>
 </div>
-<br>
+  
+<div class="container text-center">
 
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Sort By</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#">Movie Name</a>
+      <a href="#">Popular</a>
+      <a href="#">Latest Release</a>
+    </div>
+  </div>
 
+  <div class="row">
+    <a href="#">
+      <div class="col-sm-4">
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Movie 1</p>
+      </div>
+    </a>
+    <a href="#">
+      <div class="col-sm-4">
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Movie 2</p>
+      </div>
+    </a>
+    <a href="#">
+      <div class="col-sm-4">
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Movie 3</p>
+      </div>
+    </a>
+    <a href="#">
+      <div class="col-sm-4">
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Movie 4</p>
+      </div>
+    </a>
+    <a href="#">
+      <div class="col-sm-4">
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Movie 5</p>
+      </div>
+    </a>
+    <a href="#">
+      <div class="col-sm-4">
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Movie 6</p>
+      </div>
+    </a>
+    <a href="#">
+      <div class="col-sm-4">
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Movie 7</p>
+      </div>
+    </a>
+  </div>
+</div>
 
 <%= link_to 'New Movie', new_admin_movie_path %>
-<%= link_to 'Back', root_path %>
+<%= link_to 'Back', root_path %> -->
