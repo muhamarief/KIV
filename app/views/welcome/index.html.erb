@@ -5,6 +5,7 @@
       <li data-target="#myCarousel" data-slide-to="1"></li>
     </ol>
 
+
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
@@ -34,7 +35,16 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
-  
+
+<div align="center">  
+<%= form_tag search_path, method: :get do %>
+  <%= select_tag :movies, options_for_select(["Guardian of Galaxy 2", "Examples", "yas"]), include_blank: "Movies"%>
+  <%= select_tag :cinema, options_for_select(["TGV", "GSC", "MBO"]), include_blank: "Cinemas" %>
+  <%= submit_tag "Search", :class => "btn btn-primary" %>
+<% end %>
+</div>
+
+
 <div class="container text-center">    
   <h3>What We Do</h3><br>
   <div class="row">
@@ -57,8 +67,4 @@
   </div>
 </div><br>
 
-<%= form_tag search_path, method: :get do %>
-  <%= text_field_tag :q, nil %>
-  <%= text_field_tag :v, nil %>
-  <%= submit_tag "Search", :class => "btn btn-primary" %>
-<% end %>
+
