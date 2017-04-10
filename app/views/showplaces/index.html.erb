@@ -1,0 +1,11 @@
+<% @showplaces.each do |showplace| %>
+  <p><%=showplace.movie.title%></p>
+  <p><%=showplace.cinema.cinema_name%></p>
+
+  <td><%= link_to 'Edit', edit_admin_showplace_path(showplace), class: 'btn btn-mini btn-success' %></td>
+  <td><%= link_to 'Destroy', admin_showplace_path(showplace), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+
+<% end %>
+
+<%= link_to 'New Showplace', new_admin_showplace_path %>
+<%= link_to 'Back', root_path %>
