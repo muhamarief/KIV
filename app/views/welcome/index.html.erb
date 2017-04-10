@@ -56,3 +56,9 @@
     </div>
   </div>
 </div><br>
+
+<%= form_tag search_path, method: :get do %>
+  <%= text_field_tag :q, nil %>
+  <%= text_field_tag :v, nil %>
+  <%= submit_tag "Search", :class => "btn btn-primary" %>
+<% end %>

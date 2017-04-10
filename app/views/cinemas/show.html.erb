@@ -1,32 +1,18 @@
 <!-- PICTURE HERE -->
 
-<%= form_for(@cinema) do |f| %>
-  <p>
-    <%= f.label :cinema_name %><br>
-    <%= f.text_field :cinema_name %>
-  </p>
+<h3>Cinemas</h3>
 
- <p>
-    <%= f.label :contact %><br>
-    <%= f.text_area :contact %>
-  </p>
-
- <p>
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </p>
-
- <p>
-    <%= f.label :state %><br>
-    <%= f.text_area :state %>
-  </p>
-
- <p>
-    <%= f.label :company %><br>
-    <%= f.text_area :comapany %>
-  </p>
-<% end %>
+<ul class="list-group">
+  <li class="list-group-item">
+    <p>Cinema: <%= @cinema.cinema_name%></p>
+    <p>Contact: <%= @cinema.contact%> </p>
+    <p>Address: <%= @cinema.address %> </p>
+    <p>State: <%= @cinema.state %></p>
+    <p>Company: <%= @cinema.company %> </p>
+    
+  </li>
+</ul>
 
 
- <%= link_to 'Edit', edit_cinema_path(@cinema) %>
-  <%= link_to 'Back', cinemas_path %>
+ <%= link_to 'Edit', edit_admin_cinema_path(@cinema) %>
+ <%= link_to 'Back', root_path %>

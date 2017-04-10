@@ -1,40 +1,43 @@
 <!-- partial form for new.html.erb and edit.html.erb -->
 
-  <p>
-    <%= form.label :cinema_name %><br>
-    <%= form.text_field :cinema_name %>
-  </p>
+<p>
+  <%= form.label :cinema_name %><br>
+  <%= form.text_field :cinema_name %>
+</p>
 
- <p>
-    <%= form.label :contact %><br>
-    <%= form.text_area :contact %>
-  </p>
+<p>
+  <%= form.label :contact %><br>
+  <%= form.text_area :contact %>
+</p>
 
- <p>
-    <%= form.label :address %><br>
-    <%= form.text_area :address %>
-  </p>
+<p>
+  <%= form.label :address %><br>
+  <%= form.text_area :address %>
+</p>
 
- <p>
-    <%= form.label :state %><br>
-    <%= form.text_area :state %>
-  </p>
+<p>
+  <%= form.label :state %><br>
+  <%= form.text_area :state %>
+</p>
 
- <p>
-    <%= form.label :company %><br>
-    <%= form.text_area :company %>
-  </p>
+<p>
+  <%= form.label :company %><br>
+  <%= form.text_area :company %>
+</p>
 
-  <p>
-     <%= form.label :longitude %><br>
-     <%= form.text_area :longitude %>
-   </p>
+<p>
+  <%= form.label :longitude %><br>
+  <%= form.text_area :longitude %>
+</p>
 
-   <p>
-      <%= form.label :latitude %><br>
-      <%= form.text_area :latitude %>
-    </p>
+<p>
+  <%= form.label :latitude %><br>
+  <%= form.text_area :latitude %>
+</p>
 
-   <p>
-    <%= form.submit %>
-  </p>
+<%= form.file_field :photos, multiple: true %>
+
+
+<p>
+  <%= form.submit %>
+</p>
