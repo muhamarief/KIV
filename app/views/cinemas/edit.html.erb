@@ -7,9 +7,11 @@
 </div>
 <div class="row">
   <div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-    <%= form_for [:admin, @cinema] do |form| %>
-      <%= render partial: 'form', object: form %>
-    <% end %>
+    <div class="col-md-6 col-xs-6 col-sm-6">
+      <%= form_for [:admin, @cinema] do |form| %>
+        <%= render partial: 'form', object: form %>
+      <% end %>
+    </div>
   </div>
 </div>
 <div class="row">
