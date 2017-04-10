@@ -9,7 +9,7 @@ class ShowplacesController < ApplicationController
 	end
 
 	def create
-		@showplace = Showplace.new(movie_params)
+		@showplace = Showplace.new(showplace_params)
 		if @showplace.save
 			redirect_to root_path
 		else
@@ -40,7 +40,7 @@ class ShowplacesController < ApplicationController
 	end
 
 	private
-  def movie_params
+  def showplace_params
     params.require(:showplace).permit(:cinema_id, :movie_id, :hall_no)
   end
 
