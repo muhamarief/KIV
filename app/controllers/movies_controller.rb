@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
       render 'new'
     end
   end
-  
+
   def index
     @movies = Movie.all
   end
