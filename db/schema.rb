@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410074842) do
+ActiveRecord::Schema.define(version: 20170411025512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "screening_id"
+    t.integer  "user_id"
+    t.boolean  "paid_status",  default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["screening_id"], name: "index_bookings_on_screening_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
+  end
 
   create_table "cinemas", force: :cascade do |t|
     t.string   "cinema_name"
@@ -68,13 +78,25 @@ ActiveRecord::Schema.define(version: 20170410074842) do
     t.date     "start_date"
     t.time     "start_time"
     t.integer  "showplace_id"
+    t.integer  "hall_no"
     t.index ["showplace_id"], name: "index_screenings_on_showplace_id", using: :btree
+  end
+
+  create_table "seats", force: :cascade do |t|
+    t.string   "row_number"
+    t.integer  "seat_number"
+    t.boolean  "booking_status", default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "booking_id"
+    t.integer  "screening_id"
+    t.index ["booking_id"], name: "index_seats_on_booking_id", using: :btree
+    t.index ["screening_id"], name: "index_seats_on_screening_id", using: :btree
   end
 
   create_table "showplaces", force: :cascade do |t|
     t.integer  "cinema_id"
     t.integer  "movie_id"
-    t.string   "hall_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cinema_id"], name: "index_showplaces_on_cinema_id", using: :btree
@@ -107,6 +129,10 @@ ActiveRecord::Schema.define(version: 20170410074842) do
     t.index ["role_id"], name: "index_users_on_role_id", using: :btree
   end
 
+  add_foreign_key "bookings", "screenings"
+  add_foreign_key "bookings", "users"
   add_foreign_key "screenings", "showplaces"
+  add_foreign_key "seats", "bookings"
+  add_foreign_key "seats", "screenings"
   add_foreign_key "users", "roles"
 end
