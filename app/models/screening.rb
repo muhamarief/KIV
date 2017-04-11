@@ -1,10 +1,15 @@
 class Screening < ApplicationRecord
 
-  belongs_to :showplace
-  after_create :create_seats, if: => :new_record?
+  belongs_to :showplace, :dependent => :destroy
+  belongs_to :movie
+  belongs_to :cinema
+
+  has_many :seats
+
+  after_create :create_seats
 
   def create_seats
-    if self.hall_no.odd?
+    if self.hall_no.to_i.odd?
       rows = ("A".."E")
       nums = (1..10)
       rows.each do |row|
@@ -12,7 +17,7 @@ class Screening < ApplicationRecord
           Seat.create(screening_id: self.id, row_number: row, seat_number: num)
         end
       end
-    elsif self.hall_no.even?
+    elsif self.hall_no.to_i.even?
       rows = ("A".."G")
       nums = (1..12)
       other_nums = (4..9)

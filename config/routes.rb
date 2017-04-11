@@ -38,4 +38,7 @@ Rails.application.routes.draw do
 
   get "/coming_soon" => "movies#coming_soon", as: "coming_soon"
   get "/showing_now" => "movies#showing_now", as: "showing_now"
+
+  get "/screenings/:screening_id/seats" => "seats#index", as: "book_seats"
+
 end

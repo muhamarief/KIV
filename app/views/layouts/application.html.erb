@@ -47,7 +47,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= image_tag 'film.png', class:"logo" %>
+          <%= image_tag 'V.png', class:"logo" %>
 
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -65,7 +65,7 @@
 
             <% if user_signed_in? %>
               <div class="dropdown">
-                <button class="dropbtn"><%= current_user.username.capitalize %></button>
+                <button class="dropbtn nav-text"><%= current_user.username.capitalize %></button>
                 <div class="dropdown-content">
                   <li><%= link_to "Edit profile", edit_user_registration_path %></li>
                   <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
@@ -84,14 +84,13 @@
       </div>
     </nav>
 
-    
+
 
     <%= yield %>
-
-    <footer class="container-fluid text-center">
-      <p style="color:black">Footer Text</p>
-    </footer>
-
+<!--
+    <footer class="container-fluid text-center footer">
+      <p style="">Footer Text</p>
+    </footer> -->
 
 
 

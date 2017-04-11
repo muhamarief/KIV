@@ -1,7 +1,6 @@
 
 <h3>Movies</h3>
 
-
             <div class="container">    
                 <div class="jumbotron">
                   <div class="row">
@@ -30,6 +29,18 @@
   <center>
       <iframe id="player" type="text/html" width="640" height="390"  allowfullscreen="allowfullscreen" src="http://www.youtube.com/embed/<%=@movie.trailer_url%>" frameborder="0"></iframe>
   </center>
+</div>
+
+<div class='col-md-8 col-sm-8 col-xs-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2'>
+  <% @screenings.each do |showplace_id, screenings| %>
+    <p> <%= Showplace.find(showplace_id).cinema.cinema_name%> </p>
+    <% screenings.group_by(&:start_date).each do |date, x| %>
+      <p><%= date.strftime("%A")%></p>
+      <% x.each do |z| %>
+        <%=link_to "#{z.start_time.strftime('%H:%M')}", book_seats_path(z.id) %>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
 
 
