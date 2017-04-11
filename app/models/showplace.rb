@@ -1,5 +1,5 @@
 class Showplace < ApplicationRecord
   belongs_to :movie
   belongs_to :cinema
-  has_many :showplace
+  has_many :screenings
 end

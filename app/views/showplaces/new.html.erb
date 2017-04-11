@@ -8,10 +8,7 @@
 
   <%= form.label :movie_name %><br>
   <%= form.collection_select :movie_id, Movie.order(:title),:id,:title, include_blank: true %>
-
-  <%= form.label :hall_no %><br>
-  <%= form.text_field :hall_no%>
-
+  
   <p>
     <%= form.submit %>
   </p>

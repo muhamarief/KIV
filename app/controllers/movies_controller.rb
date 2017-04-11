@@ -19,17 +19,18 @@ class MoviesController < ApplicationController
   end
 
   def coming_soon
-    @movies = Movie.where("release_date < ?", Date.today)
+    @movies = Movie.where("release_date >= ?", Date.today)
     render "index"
   end
 
   def showing_now
-    @movies = Movie.where("release_date >= ?", Date.today)
+    @movies = Movie.where("release_date < ?", Date.today)
     render "index"
   end
 
   def show
     @movie = Movie.find(params[:id])
+    @screenings = Movie.find(params[:id]).screenings.group_by(&:showplace_id)
   end
 
   def edit
