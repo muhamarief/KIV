@@ -1,20 +1,29 @@
 
 <h3>Movies</h3>
 
-<ul class="list-group">
-  <li class="list-group-item">
-    <p>Movie name: <%= @movie.title%></p>
-    <p>Description: <%= @movie.description%> </p>
-    <p>Genre: <%= @movie.genre %> </p>
-    <p>Trailer: <%= @movie.trailer_url %></p>
-    <p>Cast: <%= @movie.cast %> </p>
-    <p>Ratings: <%= @movie.rating %> </p>
-    <p>Duration: <%= @movie.duration %></p>
-    <p>release date: <%= @movie.release_date %></p>
-
-
-  </li>
-</ul>
+            <div class="container">    
+                <div class="jumbotron">
+                  <div class="row">
+                      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                          <%= image_tag @movie.photos.first.url, alt: "stack photo", class: "img" %>
+                      </div>
+                      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                          <div class="container" style="border-bottom:1px solid black">
+                            <h2><%= @movie.title%></h2>
+                          </div>
+                            <hr>
+                         <ul class="container details">
+                            <li>Description: <%= @movie.description%></li>
+                            <li>Genre: <%= @movie.genre %> </li>
+                            <li>Trailer: <%= @movie.trailer_url %></li>
+                            <li>Cast: <%= @movie.cast %> </li>
+                            <li>Ratings: <%= @movie.rating %> </li>
+                            <li>Duration: <%= @movie.duration %></li>
+                            <li>Release date: <%= @movie.release_date %></li>
+                          </ul>
+                      </div>
+                  </div>
+                </div>
 
 <div class='col-md-8 col-sm-12 col-xs-12 col-md-offset-2'>
   <center>
