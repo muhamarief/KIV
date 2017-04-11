@@ -13,8 +13,13 @@
     <div class="field">
       <%= f.label :remember_me %><%= f.check_box :remember_me%>
     </div>
-  <% end -%>
+  <% end %>
     <%= f.submit "Log in          ", id:"button"%>
   </div>
 <% end %>
+
+<div class="login-block login">
+  <%= button_to "Facebook Login", user_facebook_omniauth_authorize_path, class:"btn btn-primary"%>
+</div>
+
 
