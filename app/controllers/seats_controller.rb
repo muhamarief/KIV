@@ -7,7 +7,13 @@ class SeatsController < ApplicationController
   end
 
   def index
-    @seats = Screening.find(params[:screening_id]).seats
+    @screening = Screening.find(params[:screening_id])
+    @seats = @screening.seats
+    if @screening.hall_no.odd?
+      render "seats/odd_index.html.erb"
+    elsif @screening.hall_no.even?
+      render "seats/even_index.html.erb"
+    end
   end
 
   private
