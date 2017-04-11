@@ -63,7 +63,10 @@ gem 'omniauth-facebook'
 
 gem 'figaro'
 #carrierwave
-gem 'carrierwave', '~> 1.0'
+# gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
+
 
 #for search engine
 gem 'ransack', github: 'activerecord-hackery/ransack'
