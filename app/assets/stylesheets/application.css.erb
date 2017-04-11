@@ -14,9 +14,16 @@
  *= require_self
  */
 
-/*body{
-	background-image: url("<%= asset_path 'purpleback.jpg' %>");
-}*/
+body{
+background: rgba(7,145,179,1);
+background: -moz-linear-gradient(left, rgba(7,145,179,1) 0%, rgba(134,12,168,1) 49%, rgba(13,132,168,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(7,145,179,1)), color-stop(49%, rgba(134,12,168,1)), color-stop(100%, rgba(13,132,168,1)));
+background: -webkit-linear-gradient(left, rgba(7,145,179,1) 0%, rgba(134,12,168,1) 49%, rgba(13,132,168,1) 100%);
+background: -o-linear-gradient(left, rgba(7,145,179,1) 0%, rgba(134,12,168,1) 49%, rgba(13,132,168,1) 100%);
+background: -ms-linear-gradient(left, rgba(7,145,179,1) 0%, rgba(134,12,168,1) 49%, rgba(13,132,168,1) 100%);
+background: linear-gradient(to right, rgba(7,145,179,1) 0%, rgba(134,12,168,1) 49%, rgba(13,132,168,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0791b3', endColorstr='#0d84a8', GradientType=1 );
+}
 
 .navbar{
 	border-radius:0;
@@ -24,10 +31,10 @@
 
 
 .logo {
-    width: 213px;
-    height: 36px;
-    background: url('http://i.imgur.com/fd8Lcso.png') no-repeat;
-    margin: 30px auto;
+    width:40px;
+    margin-top:5px;
+    border-radius:5px;
+
 }
 
 .login-block {
@@ -59,6 +66,19 @@
     font-family: Montserrat;
     padding: 0 20px 0 50px;
     outline: none;
+}
+
+.login-block #fb-button {
+    width: 100px;
+    height: 100px;
+    padding: 0 20px 0 50px;
+    outline: none;
+    background: #3b5998;
+    
+}
+
+.login-block #fb-button:hover{
+    background:#3b5998;
 }
 
 .login-block input#username {
@@ -110,13 +130,13 @@
       margin-bottom: 0;
       border-radius: 0;
     }
-    
+
     /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
       padding: 25px;
     }
-    
+
   .carousel-inner img {
       width: 100%; /* Set width to 100% */
       margin: auto;
@@ -126,7 +146,68 @@
   /* Hide the carousel text when the screen is less than 600 pixels wide */
   @media (max-width: 600px) {
     .carousel-caption {
-      display: none; 
+      display: none;
     }
   }
 
+
+
+.drop{
+	width:200px;
+	height:50px;
+}
+
+.carousel-inner > .item > img {
+	width: 1170px;
+	height: 650px;
+}
+
+.style_image {
+	width: 230px;
+	height: 320px;
+}
+
+.dropbtn {
+    background-color: inherit;
+    color: #9d9d9d ;
+    padding: 16px;
+    font-size: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover{
+    background-color:inherit;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9 ;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: lightgrey}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color:white;
+}

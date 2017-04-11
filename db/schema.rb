@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410034950) do
+ActiveRecord::Schema.define(version: 20170410074842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 20170410034950) do
     t.date     "release_date"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.integer  "reservation_id"
+    t.string   "braintree_payment_id"
+    t.string   "status"
+    t.string   "fourdigit"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["reservation_id"], name: "index_payments_on_reservation_id", using: :btree
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -49,6 +59,16 @@ ActiveRecord::Schema.define(version: 20170410034950) do
     t.datetime "updated_at",   null: false
     t.integer  "reference_id"
     t.index ["reference_id"], name: "index_roles_on_reference_id", using: :btree
+  end
+
+  create_table "screenings", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "price"
+    t.date     "start_date"
+    t.time     "start_time"
+    t.integer  "showplace_id"
+    t.index ["showplace_id"], name: "index_screenings_on_showplace_id", using: :btree
   end
 
   create_table "showplaces", force: :cascade do |t|
@@ -87,5 +107,6 @@ ActiveRecord::Schema.define(version: 20170410034950) do
     t.index ["role_id"], name: "index_users_on_role_id", using: :btree
   end
 
+  add_foreign_key "screenings", "showplaces"
   add_foreign_key "users", "roles"
 end

@@ -1,5 +1,4 @@
 
-
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <% if params[:action] == "index" %>
@@ -8,7 +7,7 @@
       </h1>
     <% elsif params[:action] == "showing_now" %>
       <h1 class="text-center">
-        Now Showing
+        Showing Now
       </h1>
     <% else %>
       <h1 class="text-center">
@@ -18,16 +17,12 @@
   </div>
 </div>
   
-<div class="container text-center">
+<div class="container text-left">
 
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Sort By</button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="#">Movie Name</a>
-      <a href="#">Popular</a>
-      <a href="#">Latest Release</a>
-    </div>
-  </div>
+<hr style="margin:10px 10px 10px 10px">
+  
+
+<hr style="visibility:hidden">
 
   <div class="row">
     <a href="#">
@@ -77,3 +72,4 @@
 
 <%= link_to 'New Movie', new_admin_movie_path %>
 <%= link_to 'Back', root_path %> -->
+
