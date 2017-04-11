@@ -55,7 +55,7 @@
     </a>
 </div>
 
-<hr style="margin: 20px 30px 20px 30px"> 
+<hr style="margin: 20px 30px 20px 30px">
 
 <div align="center" style="color:black">
 <%= form_tag search_path, method: :get do %>
@@ -70,19 +70,30 @@
   <h3>Now Showing</h3><br>
   <div class="row">
     <div class="col-sm-3 box">
+    <a href='/'>
       <%= image_tag 'fast82.jpg', alt: "Image", :class => "style_image"%>
+    </a>
       <p>Fast 8</p>
     </div>
+
     <div class="col-sm-3 box">
+    <a href='/'>
       <%= image_tag 'ghostinashell.jpg', alt: "Image", :class => "style_image"%>
+    </a>
       <p>Ghost In a Shell</p>
     </div>
+
     <div class="col-sm-3 box">
+    <a href='/'>
       <%= image_tag 'life.jpg', alt: "Image", :class => "style_image"%>
+    </a>
       <p>Life </p>
     </div>
+
     <div class="col-sm-3 box">
-      <%= image_tag 'beautyandthebeast.jpg', alt: "Image", :class => "style_image"%>
+      <a href='/'>
+        <%= image_tag 'beautyandthebeast.jpg', alt: "Image", :class => "style_image"%>
+      </a>
       <p>Beauty and The Beast</p>
     </div>
   </div>
@@ -94,23 +105,33 @@
 <div class="container text-center">
   <h3>Coming Soon</h3><br>
   <div class="row">
+
     <div class="col-sm-3 box">
-      <a href="page-link">
+      <a href="/">
         <%= image_tag 'guardiansmovieposter', alt: "Image", :class => "style_image"%>
       </a>
       <p>Guardians of the Galaxy Vol 2</p>
     </div>
+
     <div class="col-sm-3 box">
+    <a href="/">
     <%= image_tag 'get_out.jpg', alt: "Image", :class => "style_image"%>
       <p>Get Out</p>
+    </a>
     </div>
+
     <div class="col-sm-3 box">
-      <%= image_tag 'keep_watching.jpg', alt: "Image", :class => "style_image"%>
+      <a href="/">
+        <%= image_tag 'keep_watching.jpg', alt: "Image", :class => "style_image"%>
+      </a>
       <p>Keep Watching</p>
     </div>
+
     <div class="col-sm-3 box">
-      <%= image_tag 'Gifted-movie-poster.jpg', alt: "Image", :class => "style_image"%>
+      <a href="/">
+        <%= image_tag 'Gifted-movie-poster.jpg', alt: "Image", :class => "style_image"%>
       <p>Gifted</p>
+     </a>
     </div>
   </div>
 </div><br>
