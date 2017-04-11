@@ -9,6 +9,10 @@
 
       <%=form.label :price %><br>
       <%=form.text_field :price%>
+
+      <%= form.label :hall_no %><br>
+      <%= form.number_field :hall_no, required: true %>
+
       <p>
         <%= form.submit %>
       </p>

@@ -73,3 +73,6 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 #resizing and images
 gem "mini_magick"
 gem "braintree"
+
+#user role ability
+gem 'cancancan', '~> 1.10'
