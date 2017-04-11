@@ -14,32 +14,32 @@
       	<%= image_tag 'fast8.jpg', alt: "Image" %>
 <!--         <img src="/	images/fast8.jpg" alt="Image">
  -->        <div class="carousel-caption">
-          <h3>Sell $</h3>
-          <p>Money Money.</p>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
 
       <div class="item">
       	<%= image_tag "hq720.jpg" %>
         <div class="carousel-caption">
-          <h3>More Sell $</h3>
-          <p>Lorem ipsum...</p>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
 
       <div class="item">
         <%= image_tag "ghostinashell2.jpg" %>
         <div class="carousel-caption">
-          <h3>More Sell $</h3>
-          <p>Lorem ipsum...</p>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
 
       <div class="item">
         <%= image_tag "Get-Out-movie-song.jpg" %>
         <div class="carousel-caption">
-          <h3>More Sell $</h3>
-          <p>Lorem ipsum...</p>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
     </div>
@@ -55,11 +55,13 @@
     </a>
 </div>
 
-<div align="center">
+<hr style="margin: 20px 30px 20px 30px"> 
+
+<div align="center" style="color:black">
 <%= form_tag search_path, method: :get do %>
   <%= select_tag :movies, options_for_select(["Guardian of Galaxy 2", "Examples", "yas"]), include_blank: "Movies", class:"drop"%>
   <%= select_tag :cinema, options_for_select(["TGV", "GSC", "MBO"]), include_blank: "Cinemas", class:"drop 	" %>
-  <%= submit_tag "Search", :class => "btn btn-primary" %>
+  <%= submit_tag "Search", :class => "btn btn-primary btn2" %>
 <% end %>
 </div>
 
@@ -67,19 +69,19 @@
 <div class="container text-center">
   <h3>Now Showing</h3><br>
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-3 box">
       <%= image_tag 'fast82.jpg', alt: "Image", :class => "style_image"%>
       <p>Fast 8</p>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3 box">
       <%= image_tag 'ghostinashell.jpg', alt: "Image", :class => "style_image"%>
       <p>Ghost In a Shell</p>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3 box">
       <%= image_tag 'life.jpg', alt: "Image", :class => "style_image"%>
       <p>Life </p>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3 box">
       <%= image_tag 'beautyandthebeast.jpg', alt: "Image", :class => "style_image"%>
       <p>Beauty and The Beast</p>
     </div>
@@ -92,21 +94,21 @@
 <div class="container text-center">
   <h3>Coming Soon</h3><br>
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-3 box">
       <a href="page-link">
         <%= image_tag 'guardiansmovieposter', alt: "Image", :class => "style_image"%>
       </a>
       <p>Guardians of the Galaxy Vol 2</p>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3 box">
     <%= image_tag 'get_out.jpg', alt: "Image", :class => "style_image"%>
       <p>Get Out</p>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3 box">
       <%= image_tag 'keep_watching.jpg', alt: "Image", :class => "style_image"%>
       <p>Keep Watching</p>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3 box">
       <%= image_tag 'Gifted-movie-poster.jpg', alt: "Image", :class => "style_image"%>
       <p>Gifted</p>
     </div>
