@@ -1,44 +1,46 @@
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <h1 class="text-center">
-      All Cinemas
+ <div class="container-fluid" style="background-color:#e8e8e8">
+        <div class="container container-pad" id="property-listings">
+        <!-- please change the first two lines ADRIAN -->
+
+
+ <div class="row">
+    <div class="col-md-12">
+       <h1 class="text-center">
+      Theatres
     </h1>
+    </div>
+ </div>
+
+<div class="row">
+                <div class="col-sm-6"> 
+                    <% @cinemas.each do |cinema| %>
+                    <!-- Begin Listing: 609 W GRAVERS LN-->
+                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                        <div class="media">
+                          <%= image_tag cinema.photos.first.url, alt: "stack photo", class: "img" %>
 
 
-<div class="media">
-  <div class="media-body">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>cinema name</th>
-          <th>contact</th>
-          <th>address</th>
-          <th>state</th>
-          <th>comapany</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
+                            <div class="clearfix visible-sm"></div>
 
-     <tbody>
-        <% @cinemas.each do |cinema| %>
-          <tr>
-            <td><%= cinema.cinema_name %></td>
-            <td><%= cinema.contact %></td>
-            <td><%= cinema.address %></td>
+                            <div class="media-body fnt-smaller">
+                                <a href="#" target="_parent"></a>
 
-            <td><%= link_to 'Show', cinema_path(cinema), class: 'btn btn-mini' %></td>
-            <td><%= link_to 'Edit', edit_admin_cinema_path(cinema), class: 'btn btn-mini btn-success' %></td>
+                                <h4 class="media-heading">
+                                  <a href="cinemas#show" target="_parent"><%= cinema.cinema_name %> <small class="pull-right"><%= cinema.company %></small></a></h4>
 
-            <td><%= link_to 'Destroy', admin_cinema_path(cinema), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+                                  <p class="hidden-xs">Address: <%= cinema.address %></p>
+                                  <%= link_to 'Show', cinema_path(cinema), class: 'btn btn-mini' %>
+                                  <%= link_to 'Edit', edit_admin_cinema_path(cinema), class: 'btn btn-mini btn-success' %>
+                                  <%= link_to 'Destroy', admin_cinema_path(cinema), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %>
+                                  <%end%>
+                            </div>
+                        </div>
+                    </div><!-- End Listing-->
+
+
+
 </div>
-<br>
-
+</div>
 
 <div class="row">
   <div class="col-md-12">
@@ -52,5 +54,8 @@
 
 
 
-<%= link_to 'New listing', new_admin_cinema_path %>
+<%= link_to 'New cinema', new_admin_cinema_path %>
 <%= link_to 'Back', root_path %>
+
+
+ 
