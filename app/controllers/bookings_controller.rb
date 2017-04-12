@@ -11,6 +11,8 @@ class BookingsController < ApplicationController
         @seat_booking = SeatBooking.new(booking_id: @booking.id, seat_id: seat_id)
         @seat_booking.save
       end
+      user_seats = @booking.seats
+      @booking.set_total_price(user_seats)
       redirect_to booking_path(@booking)
     else
       redirect_to root_path
