@@ -1,10 +1,11 @@
 <div align="center">
   <iframe id="player" type="text/html" width="640" height="390"  allowfullscreen="allowfullscreen" src="http://www.youtube.com/embed/<%=@movie.trailer_url%>" frameborder="0"></iframe>
 </div> 
+
     <div class="jumbotron">
       <div class="row">
           <div class="col-sm-6" style="margin-left:60px;">
-            <%= image_tag @movie.photos.first.url, alt: "stack photo", class: "" %>
+            <%= image_tag @movie.photos.first.url, alt: "stack photo", class: "movieshow" %>
           </div>
                   <%= link_to 'Edit', edit_admin_movie_path(@movie) %>
                   <%= link_to 'Back', root_path %>
@@ -23,7 +24,7 @@
                 <li>Release date: <%= @movie.release_date %></li>
               </ul>
 
-              <div>  
+              <div class='col-md-8 col-sm-8 col-xs-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2'>
                 <% @screenings.each do |showplace_id, screenings| %>
                   <p> <%= Showplace.find(showplace_id).cinema.cinema_name%> </p>
                   <% screenings.group_by(&:start_date).each do |date, x| %>
@@ -34,13 +35,13 @@
                   <% end %>
                 <% end %>
               </div>
+            </div>
           </div>
-      </div>
-    </div>
+       </div>
+        
 
-  
 
-             
+
 
 
 
