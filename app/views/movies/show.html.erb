@@ -1,11 +1,14 @@
+<div class="container">
+  <div class="jumbotron">
+    <center>
+      <iframe id="player" type="text/html" width="640" height="390"  allowfullscreen="allowfullscreen" src="http://www.youtube.com/embed/<%=@movie.trailer_url%>" frameborder="0"></iframe>
+  </center>     
 
-<h3>Movies</h3>
-
-            <div class="container">    
+             
                 <div class="jumbotron">
                   <div class="row">
-                      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-                          <%= image_tag @movie.photos.first.url, alt: "stack photo", class: "img" %>
+                      <div class="col-md-4">
+                        <%= image_tag @movie.photos.first.url, alt: "stack photo", class: "img" %>
                       </div>
                       <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
                           <div class="container" style="border-bottom:1px solid black">
@@ -24,12 +27,6 @@
                       </div>
                   </div>
                 </div>
-
-<div class='col-md-8 col-sm-12 col-xs-12 col-md-offset-2'>
-  <center>
-      <iframe id="player" type="text/html" width="640" height="390"  allowfullscreen="allowfullscreen" src="http://www.youtube.com/embed/<%=@movie.trailer_url%>" frameborder="0"></iframe>
-  </center>
-</div>
 
 <div class='col-md-8 col-sm-8 col-xs-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2'>
   <% @screenings.each do |showplace_id, screenings| %>

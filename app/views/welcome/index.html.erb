@@ -70,8 +70,11 @@
   <h3>Now Showing</h3><br>
   <div class="row">
     <div class="col-sm-3 box">
-    <a href='/'>
+    <a href=''>
+      <%= link_to movie_path(@movie) do %>
+
       <%= image_tag 'fast82.jpg', alt: "Image", :class => "style_image"%>
+      <%end%>
     </a>
       <p>Fast 8</p>
     </div>
@@ -91,7 +94,7 @@
     </div>
 
     <div class="col-sm-3 box">
-      <a href='/'>
+      <%= link_to 'New Movie', new_admin_movie_path %>
         <%= image_tag 'beautyandthebeast.jpg', alt: "Image", :class => "style_image"%>
       </a>
       <p>Beauty and The Beast</p>
