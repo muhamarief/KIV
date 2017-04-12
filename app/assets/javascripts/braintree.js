@@ -2,7 +2,6 @@ $(document).on('turbolinks:load', function(){
   var form = document.querySelector('#cardForm');
   var submit = document.querySelector("#submit-payment-btn");
   var token = $('input[name="token"]').attr('value')
-  debugger
   braintree.client.create({
     // Replace this with your own authorization.
     authorization: token
