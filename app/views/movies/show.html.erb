@@ -4,7 +4,7 @@
     <div class="jumbotron">
       <div class="row">
           <div class="col-sm-6" style="margin-left:60px;">
-            <%= image_tag @movie.photos.first.url, alt: "stack photo", class: "img" %>
+            <%= image_tag @movie.photos.first.url, alt: "stack photo", class: "" %>
           </div>
                   <%= link_to 'Edit', edit_admin_movie_path(@movie) %>
                   <%= link_to 'Back', root_path %>
@@ -22,6 +22,7 @@
                 <li>Duration: <%= @movie.duration %></li>
                 <li>Release date: <%= @movie.release_date %></li>
               </ul>
+
               <div>  
                 <% @screenings.each do |showplace_id, screenings| %>
                   <p> <%= Showplace.find(showplace_id).cinema.cinema_name%> </p>
