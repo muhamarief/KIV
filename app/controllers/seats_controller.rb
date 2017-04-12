@@ -9,13 +9,10 @@ class SeatsController < ApplicationController
 
   def index
     @screening = Screening.find(params[:screening_id])
-    @seats = @screening.seats
+    @seats_hash = @screening.seats.group_by(&:row_number)
+    @booking = Booking.new
+    @booking_seat = SeatBooking.new
     render "seats/odd_index.html.erb"
-    # if @screening.hall_no.odd?
-    #   render "seats/odd_index.html.erb", layout: 'seats'
-    # elsif @screening.hall_no.even?
-    #   render "seats/even_index.html.erb", layout: 'seats'
-    # end
   end
 
   private

@@ -22,7 +22,7 @@ class ScreeningsController < ApplicationController
 
   private
   def screening_params
-    params.require(:screening).permit(:price, :start_date, :start_time, :showplace_id)
+    params.require(:screening).permit(:price, :start_date, :start_time, :showplace_id, :hall_no)
   end
 
 end
