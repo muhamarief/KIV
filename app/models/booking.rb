@@ -9,7 +9,6 @@ class Booking < ApplicationRecord
     user_seats.each do |x|
       total += x.screening.price
     end
-    byebug
     self.total_price = total
     self.save
   end
