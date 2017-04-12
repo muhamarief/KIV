@@ -405,13 +405,7 @@ $(document).ready(function(){
       $.each($(".row__seat--selected"),function(value, index) {
           seats_id.push($(index).attr('id'))
       });
-      debugger
 
-      // for (var i = 0; i < arrayLength; i++) {
-      //   var id = seatsObject[i].attr('id')
-      //   seats_id.push(id)
-      // }
-      // debugger
       $("#selected_seats").attr('value', seats_id.toString())
       form.submit();
     });
