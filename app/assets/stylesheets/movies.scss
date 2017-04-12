@@ -4,8 +4,8 @@
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: grey;
-    color: black;
+    background-color: inherit;
+    color: #9d9d9d;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -14,8 +14,8 @@
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
-    color:black
+    background-color: inherit;
+    color:white
 }
 
 /* The container <div> - needed to position the dropdown content */
