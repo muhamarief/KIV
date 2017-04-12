@@ -8,7 +8,6 @@
  * Copyright 2015, Codrops
  * http://www.codrops.com
  */
- console.log("hello")
 $(document).ready(function(){
   ;(function(window) {
 
@@ -393,6 +392,29 @@ $(document).ready(function(){
   		classie.add(playCtrl, 'action--shown');
   		video.load();
   	}
+
+    var form = document.querySelector('#new_booking');
+    var submit = document.querySelector("#submit-booking");
+    form.addEventListener('submit', function (event) {
+      // get the selected seats to rails
+      event.preventDefault()
+      // var seatsObject = $(".row__seat--selected")
+      var seats_id = []
+      // var arrayLength = seatsObject.length;
+
+      $.each($(".row__seat--selected"),function(value, index) {
+          seats_id.push($(index).attr('id'))
+      });
+      debugger
+
+      // for (var i = 0; i < arrayLength; i++) {
+      //   var id = seatsObject[i].attr('id')
+      //   seats_id.push(id)
+      // }
+      // debugger
+      $("#selected_seats").attr('value', seats_id.toString())
+      form.submit();
+    });
 
   	init();
 

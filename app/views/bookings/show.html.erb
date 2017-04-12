@@ -1,0 +1,15 @@
+<center>
+  <h3> YOUR BOOKING REQUEST </h3>
+    <div>
+      <p><%= @booking.screening.showplace.movie.title %></p>
+      <p><%= @booking.screening.showplace.cinema.cinema_name %></p>
+    </div>
+</center>
+
+<center>
+  <p> Your Booking Id <%=@booking.id%>
+  <% @seat_bookings.each do |seat_booking| %>
+    <p> Seats : </p>
+      <%= seat_booking.seat.row_number%><%= seat_booking.seat.seat_number%>
+  <% end %>
+</center>

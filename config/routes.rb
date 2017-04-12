@@ -41,4 +41,10 @@ Rails.application.routes.draw do
 
   get "/screenings/:screening_id/seats" => "seats#index", as: "book_seats"
 
+  resources :screenings do
+    resources :bookings, only: [:new, :create]
+  end
+
+  resources :bookings, only: :show
+
 end
