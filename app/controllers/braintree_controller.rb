@@ -37,6 +37,7 @@ class BraintreeController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     amount = @booking.total_price
 
+
     result = Braintree::Transaction.sale(
      :amount => amount, #this is currently hardcoded
      :payment_method_nonce => nonce_from_the_client,
