@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KIV</title>
+
+    <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="An experimental demo where a 3D perspective preview is shown for a selected seat in a cinema room." />
+		<meta name="keywords" content="cinema, seat booking, seating plan, perspective, 3d" />
+		<meta name="author" content="Codrops" />
+		<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" /> -->
+		<!-- <script src="js/modernizr-custom.js"></script> -->
+
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    <%= csrf_meta_tags %>
+    
+    <%= stylesheet_link_tag "demo" %>
+    <%= stylesheet_link_tag "normalize" %>
+    <%= stylesheet_link_tag "component" %>
+
+    <%= favicon_link_tag 'film.ico' %>
+
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+  </head>
+
+  <body>
+
+
+    <%= yield %>
+<!--
+    <footer class="container-fluid text-center footer">
+      <p style="">Footer Text</p>
+    </footer> -->
+
+
+
+
+  </body>
+</html>
