@@ -19,7 +19,7 @@ class MoviesController < ApplicationController
   end
 
   def coming_soon
-    @movies = Movie.where("release_date >= ?", Date.today)
+    @movies = Movie.where("release_date > ?", Date.today)
     render "index"
   end
 

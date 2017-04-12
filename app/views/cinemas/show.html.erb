@@ -5,12 +5,13 @@
             <div class="container">    
                 <div class="jumbotron">
                   <div class="row">
-                      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                      <div>
+                          <div class="col-sm-4">
                            <%= image_tag @cinema.photos.first.url, alt: "stack photo", class: "img" %>
+                           </div>
 
-                      </div>
-                      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
-                          <div class="container" style="border-bottom:1px solid black">
+                          <div class="col-sm-8">
+                          <div class="container " style="border-bottom:1px solid black">
                             <h2>Cinema: <%= @cinema.cinema_name%></h2>
                           </div>
                             <hr>
@@ -18,10 +19,12 @@
                             <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Contact: <%= @cinema.contact%></p></li>
                             <li><p><span class="glyphicon glyphicon-home" style="width:50px;"></span>Address: <%= @cinema.address %></p></li>
                             <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>State: <%= @cinema.state %><</p></li>
-                            <li><p><span class="glyphicon glyphicon-briefcase" style="width:50px;"></span>Company: <%= @cinema.company %> </p></a>
+                            <li><p><span class="glyphicon glyphicon-briefcase" style="width:50px;"></span>Company: <%= @cinema.company %> </p></li>
                           </ul>
+                          </div>
                       </div>
                   </div>
+                </div>
                 </div>
 
 <%= link_to 'Edit', edit_admin_cinema_path(@cinema) %>
