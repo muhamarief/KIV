@@ -1,4 +1,5 @@
 class SeatsController < ApplicationController
+  layout 'seats', only: [:index]
 
   def new
   end
@@ -9,11 +10,12 @@ class SeatsController < ApplicationController
   def index
     @screening = Screening.find(params[:screening_id])
     @seats = @screening.seats
-    if @screening.hall_no.odd?
-      render "seats/odd_index.html.erb"
-    elsif @screening.hall_no.even?
-      render "seats/even_index.html.erb"
-    end
+    render "seats/odd_index.html.erb"
+    # if @screening.hall_no.odd?
+    #   render "seats/odd_index.html.erb", layout: 'seats'
+    # elsif @screening.hall_no.even?
+    #   render "seats/even_index.html.erb", layout: 'seats'
+    # end
   end
 
   private
