@@ -1,12 +1,14 @@
 <center>
-  <h3> YOUR BOOKING REQUEST </h3>
+  <h3> CHECKOUT </h3>
     <div>
       <p><%= @booking.screening.showplace.movie.title %></p>
       <p><%= @booking.screening.showplace.cinema.cinema_name %></p>
     </div>
 </center>
 
-<center>
+<ul class="list-group">
+  <li class="list-group-item">
+    <center>
   <p> Your Booking Id <%=@booking.id%>
   <p> Seats : </p>
   <% @seat_bookings.each do |seat_booking| %>
@@ -18,5 +20,7 @@
   <p> Total Tickets Price: </p>
   <p>RM <%= @booking.total_price %></p>
 </center>
+  </li>
+</ul>
 
-<%= link_to "Make Payment", braintree_pay_path(@booking) %>
+<%= link_to "Payment", braintree_pay_path(@booking) %>
