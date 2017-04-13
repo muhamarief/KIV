@@ -59,11 +59,12 @@
 
                       <p>
                         <% x.each do |z| %>
-                        <p><%=link_to "#{z.start_time.strftime('%H:%M')}", book_seats_path(z.id) %>
+                          <div class="col-md-<%=12/x.length%>">
+                              <p><%=link_to "#{z.start_time.strftime('%H:%M')}", book_seats_path(z.id) %>
 
-                        <p class="priceprice" style="font-size: 10px; color: red;">(<%= z.price %>)</p>
-                        </p>
-
+                              <p class="priceprice" style="font-size: 10px; color: red;">RM(<%= z.price %>)</p>
+                              </p>
+                          </div>
                         <% end %>
                       </p>
 
@@ -86,10 +87,12 @@
                       <p><%= date.strftime("%A")%></p>
 
                       <% x.each do |z| %>
-                        <p><%=link_to "#{z.start_time.strftime('%H:%M')}", book_seats_path(z.id) %>
+                          <div class="col-md-<%=12/x.length%>">
+                              <p><%=link_to "#{z.start_time.strftime('%H:%M')}", book_seats_path(z.id) %>
 
-                        <p class="priceprice" style="font-size: 10px; color: red;">(<%= z.price %>)</p>
-                        </p>
+                              <p class="priceprice" style="font-size: 10px; color: red;">RM(<%= z.price %>)</p>
+                              </p>
+                          </div>
 
 
                       <% end %>

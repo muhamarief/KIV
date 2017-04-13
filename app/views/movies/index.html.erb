@@ -28,11 +28,9 @@
 <div class="container">
   <% @movies.each_with_index do |movie, index| %>
     <a href="/movies/<%= movie.id %>">
-      <div class="col-sm-4">
+      <div class="col-sm-4 col-md-4 col-xs-4">
         <!-- <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"> -->
-        <%= image_tag movie.photos.first.url, class: "img-responsive style_image_comingsoon", style: "width: 100%" %>
-
-        <p><%=movie.title%></p>
+        <%= image_tag movie.photos.first.url, class: "img-responsive style_image_comingsoon", style: "width: 80%" %>
       </div>
     </a>
   <%end%>
