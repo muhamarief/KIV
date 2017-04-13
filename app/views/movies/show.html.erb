@@ -56,9 +56,14 @@
                   <% x.screenings.group_by(&:start_date).each do |date, x| %>
                     <div class="col-md-12 col-sm-12" style="border: 2px solid black">
                       <p><%= date.strftime("%A")%></p>
+
                       <p>
                         <% x.each do |z| %>
-                          <%=link_to "#{z.start_time.strftime('%H:%M')}", book_seats_path(z.id) %>
+                        <p><%=link_to "#{z.start_time.strftime('%H:%M')}", book_seats_path(z.id) %>
+
+                        <p class="priceprice" style="font-size: 10px; color: red;">(<%= z.price %>)</p>
+                        </p>
+
                         <% end %>
                       </p>
 
@@ -79,11 +84,16 @@
                   <% screenings.group_by(&:start_date).each do |date, x| %>
                     <div class="col-md-12 col-sm-12" style="border: 2px solid black">
                       <p><%= date.strftime("%A")%></p>
-                      <p>
+
                       <% x.each do |z| %>
-                        <%=link_to "#{z.start_time.strftime('%H:%M')}", book_seats_path(z.id) %>
+                        <p><%=link_to "#{z.start_time.strftime('%H:%M')}", book_seats_path(z.id) %>
+
+                        <p class="priceprice" style="font-size: 10px; color: red;">(<%= z.price %>)</p>
+                        </p>
+
+
                       <% end %>
-                      </p>
+
 
                     </div>
                     <!-- screenings group by -->
