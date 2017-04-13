@@ -12,10 +12,41 @@
     }
     li {
         margin-bottom:10px;
-        
+
     }
 
     .img{
     	width:200px;
     	height:200px
     }
+
+#cinema-show-container{
+	margin-top: 50px;
+}
+
+#cinema-movie-title {
+	font-size: 30px;
+}
+
+.theatre-container{
+	margin: 30px 30px 30px 30px;
+	padding: 45px 5px 30px 5px;
+}
+
+.cinema-index-name{
+	margin-bottom: 20px;
+}
+
+.cinema-index-name-container{
+	font-size: 30px;
+}
+
+.cinema-show-movie-pic{
+	width: 10%;
+	height: 40%;
+
+}
+
+.now-showing-movies{
+	font-size: 20px;
+}

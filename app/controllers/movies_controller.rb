@@ -30,7 +30,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-    @screenings = Movie.find(params[:id]).screenings.group_by(&:showplace_id)
+    @screenings = @movie.screenings.group_by(&:showplace_id)
   end
 
   def edit

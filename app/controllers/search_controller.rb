@@ -1,22 +1,29 @@
 class SearchController < ApplicationController
 
   def index
-    if params[:q] == ""
-      v = params[:v]
-      @cinemas = Cinema.search(cinema_name_cont: v).result
-      render :template => "cinemas/index"
-    elsif params[:v] == ""
-      q = params[:q]
-      @movies = Movie.search(title_cont: q).result
-      render :template => "movies/index"
+    if params[:search][:q] == ""
+      v = params[:search][:v]
+      @cinema = Cinema.find(v.to_i)
+      @movies = @cinema.movies
+      render :template => "cinemas/show"
+    elsif params[:search][:v] == ""
+      q = params[:search][:q]
+      @movie = Movie.find(q.to_i)
+      @screenings = @movie.screenings.group_by(&:showplace_id)
+      byebug
+      render :template => "movies/show"
     else
-      q = params[:q]
-      v = params[:v]
-      @cinema = Cinema.search(cinema_name_cont: v).result.first
-      @movie = Movie.search(title_cont: q).result.first
+      q = params[:search][:q]
+      v = params[:search][:v]
+      @cinema = Cinema.find(v.to_i)
+      @movie = Movie.find(q.to_i)
+
+      # @movie.screenings.group_by(&:showplace_id)
+      @showplaces =   @movie.showplaces.where(cinema_id: @cinema.id).group_by(&:id)
+      # .group_by(&:showplace_id)
       render :template => "movies/show"
     end
-    
+
   end
 
 end

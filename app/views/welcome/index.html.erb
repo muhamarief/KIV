@@ -68,11 +68,11 @@
 <hr style="margin: 20px 30px 20px 30px">
 
 <div align="center" style="color:black">
-<%= form_for search_path, method: :get do |form|%>
+  <%= form_tag search_path, method: :get do %>
 
-    <%= form.collection_select :cinema_id, Movie.order(:title),:id,:title, include_blank: true %>
-
-    <%= form.collection_select :cinema_id, Cinema.order(:cinema_name),:id,:cinema_name, include_blank: true %>
+    <%= collection_select :search, :q, Movie.order(:title), :id, :title, include_blank: true %>
+<%# collection_select :search, :genre, :id, Genre.all, :id, :name %>
+    <%= collection_select :search, :v, Cinema.order(:cinema_name), :id, :cinema_name, include_blank: true %>
 
 
   <%= submit_tag "Search", :class => "btn btn-primary btn2" %>

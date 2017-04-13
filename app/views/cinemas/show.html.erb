@@ -1,31 +1,53 @@
 <!-- PICTURE HERE -->
+<div class="container" id='cinema-show-container'>
+    <div class="jumbotron">
+      <div class="row">
+          <div>
+              <div class="col-sm-4">
+                 <%= image_tag @cinema.photos.first.url, alt: "stack photo", class: "img" %>
+              </div>
 
-<h3>Cinemas</h3>
-
-            <div class="container">    
-                <div class="jumbotron">
-                  <div class="row">
-                      <div>
-                          <div class="col-sm-4">
-                           <%= image_tag @cinema.photos.first.url, alt: "stack photo", class: "img" %>
-                           </div>
-
-                          <div class="col-sm-8">
-                          <div class="container " style="border-bottom:1px solid black">
-                            <h2>Cinema: <%= @cinema.cinema_name%></h2>
-                          </div>
-                            <hr>
-                          <ul class="container details">
-                            <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Contact: <%= @cinema.contact%></p></li>
-                            <li><p><span class="glyphicon glyphicon-home" style="width:50px;"></span>Address: <%= @cinema.address %></p></li>
-                            <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>State: <%= @cinema.state %><</p></li>
-                            <li><p><span class="glyphicon glyphicon-briefcase" style="width:50px;"></span>Company: <%= @cinema.company %> </p></li>
-                          </ul>
-                          </div>
-                      </div>
+              <div class="col-sm-8">
+                  <div class="container " style="border-bottom:1px solid black">
+                    <h2>Cinema: <%= @cinema.cinema_name%></h2>
                   </div>
-                </div>
-                </div>
+                    <hr>
+                  <ul class="container details">
+                    <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>Contact: <%= @cinema.contact%></p></li>
+                    <li><p><span class="glyphicon glyphicon-home" style="width:50px;"></span>Address: <%= @cinema.address %></p></li>
+                    <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>State: <%= @cinema.state %></p></li>
+                    <li><p><span class="glyphicon glyphicon-briefcase" style="width:50px;"></span>Company: <%= @cinema.company %> </p></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+<% if current_user.role.name == "Admin"%>
+  <%= link_to 'Edit', edit_admin_cinema_path(@cinema) %>
+  <%= link_to 'Back', root_path %>
+<% end %>
 
-<%= link_to 'Edit', edit_admin_cinema_path(@cinema) %>
-<%= link_to 'Back', root_path %>
+<div class="container" id='cinema-show-container'>
+    <div class="jumbotron">
+      <div class="row">
+          <%@cinema.movies.each do |movie| %>
+              <div class="movies-in-cinema">
+                  <p id='cinema-movie-title'><%=movie.title%></p>
+                  <% movie.showplaces.where(cinema_id: @cinema.id).each do |showplace|%>
+                      <% showplace.screenings.group_by(&:start_date).each do |date, x|%>
+                          <div class="col-md-12 col-sm-12" style="border: 2px solid black">
+                            <p><%= date.strftime("%A")%></p>
+                            <p>
+                            <% x.each do |z| %>
+                              <%=link_to "#{z.start_time.strftime('%H:%M')}", book_seats_path(z.id) %>
+                            <% end %>
+                            </p>
+                          </div>
+                      <% end %>
+                  <% end %>
+              </div>
+          <%end%>
+        </div>
+    </div>
+</div>
