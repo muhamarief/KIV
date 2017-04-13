@@ -1,3 +1,27 @@
 // Place all the styles related to the Bookings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#booking-movie-title{
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 21px;
+
+}
+
+#booking-container{
+  margin-top: 100px;
+  background-color: #F6F5F5;
+}
+
+#booking-title {
+  border-bottom: 3px;
+
+}
+
+#booking-seats{
+
+}
+
+.booking-details{
+  font-size: 20px;
+}
