@@ -9,14 +9,18 @@
 
       <div class='col-md-8 col-sm-8 col-xs-8'>
           <div id='booking-cinema'>
-            <p class='booking-details'><%= @booking.screening.showplace.cinema.cinema_name %></p>
+            <p class='booking-details'>
+              <%= @booking.screening.showplace.cinema.cinema_name %>
+            </p>
             <p> <%=@booking.screening.showplace.cinema.address%></p>
           </div>
           <div id='booking-seat'>
-            <p class='booking-details'> Seats : </p>
+            <p class='booking-details'> Seats :</p>
+            <p>
             <% @seat_bookings.each do |seat_booking| %>
               <%= seat_booking.seat.row_number%>-<%= seat_booking.seat.seat_number%>
             <% end %>
+            </p>
           </div>
           <div id='booking-seat'>
             <p class='booking-details'> Total Tickets Price: </p>
