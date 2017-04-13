@@ -1,11 +1,42 @@
-<div align="center">
-  <iframe id="player" type="text/html" width="640" height="390"  allowfullscreen="allowfullscreen" src="http://www.youtube.com/embed/<%=@movie.trailer_url%>" frameborder="0"></iframe>
-</div> 
 
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <!-- Trigger the modal with a button -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body" style="opacity: 1; padding:0px">
+            <iframe id="player" type="text/html" width="900" height="700"  allowfullscreen="allowfullscreen" src="http://www.youtube.com/embed/<%=@movie.trailer_url%>" frameborder="0"></iframe>        
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
     <div class="jumbotron">
       <div class="row">
           <div class="col-sm-6" style="margin-left:60px;">
-            <%= image_tag @movie.photos.first.url, alt: "stack photo", class: "movieshow" %>
+            <a href="" id="movie-img-btn" data-toggle="modal" data-target="#myModal">
+              <%= image_tag @movie.photos.first.url, alt: "stack photo", class: "movieshow" %>
+            </a>
           </div>
                   <%= link_to 'Edit', edit_admin_movie_path(@movie) %>
                   <%= link_to 'Back', root_path %>
@@ -23,14 +54,17 @@
                 <li>Duration: <%= @movie.duration %></li>
                 <li>Release date: <%= @movie.release_date %></li>
               </ul>
-
-              <div class='col-md-8 col-sm-8 col-xs-8 col-md-offset-2 col-xs-offset-2 col-sm-offset-2'>
                 <% @screenings.each do |showplace_id, screenings| %>
+                  <div class='col-md-12 col-sm-12'>
                   <p> <%= Showplace.find(showplace_id).cinema.cinema_name%> </p>
+                  </div>
                   <% screenings.group_by(&:start_date).each do |date, x| %>
+                  <div class="col-md-12 col-sm-12" style="border: 2px solid black">
                     <p><%= date.strftime("%A")%></p>
+                  
                     <% x.each do |z| %>
                       <%=link_to "#{z.start_time.strftime('%H:%M')}", book_seats_path(z.id) %>
+                  </div>
                     <% end %>
                   <% end %>
                 <% end %>

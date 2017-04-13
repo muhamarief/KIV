@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'braintree/new'
+
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
@@ -47,4 +47,6 @@ Rails.application.routes.draw do
 
   resources :bookings, only: :show
 
+  get 'bookings/:booking_id/braintree/new' => "braintree#new", as: "braintree_pay"
+  post 'bookings/:booking_id/braintree/checkout' => "braintree#checkout", as: "braintree_paying"
 end

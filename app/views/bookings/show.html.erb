@@ -8,8 +8,15 @@
 
 <center>
   <p> Your Booking Id <%=@booking.id%>
+  <p> Seats : </p>
   <% @seat_bookings.each do |seat_booking| %>
-    <p> Seats : </p>
-      <%= seat_booking.seat.row_number%><%= seat_booking.seat.seat_number%>
+    <%= seat_booking.seat.row_number%>-<%= seat_booking.seat.seat_number%>
   <% end %>
 </center>
+
+<center>
+  <p> Total Tickets Price: </p>
+  <p>RM <%= @booking.total_price %></p>
+</center>
+
+<%= link_to "Make Payment", braintree_pay_path(@booking) %>
